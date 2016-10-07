@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>4 4 Github Profile</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+    <header>github header</header>
+      <div class="main">
+        <div class="container-fluid">
+          <div class="row clearfix">
+            <div class="col-md-3 profile-panel">
+
+<!-- Profile pane -->
+              <div class="profilepane-container">
+                <div id="profile-pane">
+                  <img src="" alt="" />
+                    <div class="user-pane">
+                      <h1 class="user">
+                        <span class="name">{{name}}</span>
+                        <span class="user-name">{{user-name}}</span>
+                      </h1>
+                      <div class="follow"></div>
+                      <div class="block">
+                        <a href="">block</a>
+                      </div>
+                      <div class="user-email">
+                        {{email}}
+                      </div>
+                      <div class="user-join-date">
+                        {{join-date}}
+                      </div>
+                      <div class="user-orgs">
+                        <h2>organizations</h2>
+                        <a href="">inserlink,icon on after</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+
+<!-- Repo stats -->
+            <div class="col-md-8 repos-widow">
+            <!-- stats-template-here -->
+            </div>
+<!-- repo stats end -->
+          </div>
+        </div>
+      </div>
+
+<!-- footer -->
+      <footer>
+        footer goes here
+      </footer>
+
+<!-- repo-stats-template -->
+      <div id="repo-list">
+        <div class="col-md-12 repo-pane">
+          <div class="col-md-6 repo-name">
+             <h3 class="repo-name">{{reponame}}</h3>
+            <p class="repostatus">{{repostatus}}</p>
+          </div>
+          <div class="col-md-3">
+            <span class="repoactivity">
+              {{repoactivity}}
+            </span>
+           </div>
+          <div class="col-md-2">
+            <span class="repotype">
+              {{repotype}}
+            </span>
+          </div>
+          <div class="col-md-1 repostars">
+            <a href="">{{repostars}}</a>
+          </div>
+        </div>
+      </div>
+
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
