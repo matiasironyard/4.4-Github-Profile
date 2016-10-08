@@ -12,27 +12,95 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
   box-sizing: border-box;
 }
 
-.clearfix{
-  overflow: auto;
-}
+// .clearfix{
+//   overflow: auto;
+// }
 
 img {
   max-width: 100%;
 }
+
+a {
+    color: #C3BFC0;
+    text-decoration: none;
+}
+
+a:hover
+{
+     color:#000000;
+     text-decoration:none;
+     cursor:pointer;
+}
+.octicon-triangle-down{
+  color: #000000;
+}
+
+header{
+  background-color: #F5F5F5;
+}
+
 .main{
-  border: 2px solid blue;
+  margin: 0 auto;
+  width: 983px;
 }
 
 .profile-panel{
-  border: 2px solid red;
   float: left;
 }
 
 .repos-pane-nav{
-  border: 2px solid yellow;
+  border-bottom: 1px solid grey;
+  height: 65px;
+  color: grey;
+}
+.repo-nav{
+  position: relative;
+  top: 20px;
+  padding-right: 60px;
+}
+
+.repos-pane-nav{
+
   float: right;
 }
+
+.repo-search{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  .input-group{
+    display: inline-flex;
+    width: 700px;
+    .type{
+      position: relative;
+      left: 35px;
+      color: #818199;
+    }
+    .all{
+      text-transform: uppercase;
+      color: #000000;
+      font-weight: bold;
+      margin: 2px;
+    }
+    .btn-default{
+      background: linear-gradient(#FBFBFB, #FBFBFB);
+      margin-left: 10px;
+    }
+    .form-control{
+      border-radius: 3px;
+    }
+  }
+}
+
+.repo-item-holder{
+  border: 3px solid red;
+  padding-top: 18px;
+}
+.repo-row * {
+margin:0 auto;
+height: 65px;
+
+}
 .repo-pane{
-  border: 2px solid green;
+
   float: right;
 }

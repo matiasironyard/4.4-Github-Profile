@@ -14,13 +14,14 @@ if(githubtoken !== undefined){
 $.ajax('https://api.github.com/users/matiasironyard').then(getProfile);
 $.ajax('https://api.github.com/users/matiasironyard/repos?sort=pushed').then(getRepos);
 $.ajax('https://api.github.com/users/matiasironyard').then(getDate);
-$.ajax('https://api.github.com/users/matiasironyard/orgs').then(getSubscriptions);
 
 // Fetch & append profile data---------------------------------------------------------------------------------
 function getProfile(data){
 
   var myProfile = data;
   console.log(myProfile);
+  var myOrgs = data.orgs_url;
+  console.log(myOrgs);
 
   var $profileContainer = $('#profilepane-container');
   var source = $('#profile-pane-template').html();
@@ -51,17 +52,4 @@ function getRepos(data){
   _.each(myRepos,function(repo){
   $reposContainer.append(Template(repo));
 });
-}
-
-// Fetch $ append subscriptions--------------------------------------------------------------------------------
-
-function getSubscriptions(data){
-
-  var mySubscriptions = data;
-  console.log(mySubscriptions);
-
-  // var $profileContainer = $('#profilepane-container');
-  // var source = $('#profile-pane-template').html();
-  // var profileTemplate = Handlebars.compile(source);
-  // $profileContainer.append(profileTemplate(myProfile));
 }

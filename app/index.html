@@ -15,12 +15,29 @@
 <!-- Profile pane -->
             <div class="col-md-3 profile-panel">
               <div id="profilepane-container">
-
+              <!-- profile template here -->
               </div>
             </div>
+<!-- repo nav bar             -->
             <div class="col-md-9 clearfix repos-pane-nav">
-              repos nav here
+                <span class="repo-nav"><a href="#">Overview</a></span>
+                <span class="repo-nav"><a href="#">Repositories</a><span>0</span></span>
+                <span class="repo-nav"><a href="#">Stars</a></span>
+                <span class="repo-nav"><a href="#">Followers</a></span>
+                <span class="repo-nav"><a href="#">Following</a></span>
             </div>
+<!-- repo search bar  -->
+
+              <div class="col-md-9 repo-search">
+                <div class="row">
+                      <div class="input-group">
+                          <input type="text" class="form-control">
+                          <button type="submit" class="btn btn-default type">Type:<span class="all">ALL</span><span class="octicon octicon-triangle-down"></span></button>
+                          <button type="submit" class="btn btn-default type">Language:<span class="all">ALL</span><span class="octicon octicon-triangle-down"></span></button>
+                      </div>
+                  </div>
+              </div>
+
 <!-- Repo stats -->
                   <div class = "col-md-9 repo-pane" id="repo-pane"></div>
                 </div>
@@ -62,30 +79,32 @@
             </div>
             <div class="user-orgs">
               <h2>organizations</h2>
-              <a href='{{subscription_url}}'>a</a>
+              <a href='{{organizations_url}}'>a</a>
             </div>
           </div>
         </script>
 
 <!-- repos-template -->
 <script id="repo-list-template" type="text/x-handlebars-template">
-  <div class="row">
-    <div class="col-md-6 repo-name">
-         <h3 class="repo-name">{{name}}</h3>
-        <p class="repostatus"></p>
+  <div class="row repo-item-holder">
+    <div class="row repo-row">
+      <div class="col-md-6 repo-name">
+           <h3 class="repo-name">{{name}}</h3>
+          <p class="repostatus"></p>
+        </div>
+        <div class="col-md-3">
+          <span class="repoactivity">
+            {{repoactivity}}
+          </span>
+         </div>
+        <div class="col-md-2">
+          <span class="repotype">
+            {{language}}
+          </span>
+        </div>
+        <div class="col-md-1 repostars">
+          <a href="">{{stargazers_count}}</a>
       </div>
-      <div class="col-md-3">
-        <span class="repoactivity">
-          {{repoactivity}}
-        </span>
-       </div>
-      <div class="col-md-2">
-        <span class="repotype">
-          {{language}}
-        </span>
-      </div>
-      <div class="col-md-1 repostars">
-        <a href="">{{stargazers_count}}</a>
     </div>
 </script>
 
