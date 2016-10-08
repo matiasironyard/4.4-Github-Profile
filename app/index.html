@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>4 4 Github Profile</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" media="screen" title="no title">
   </head>
   <body>
     <header>github header</header>
@@ -21,16 +22,13 @@
               repos nav here
             </div>
 <!-- Repo stats -->
-            <div class="col-md-9 repos-pane">
-                <div class="repos-container">
-
+                  <div class = "col-md-9 repo-pane" id="repo-pane"></div>
                 </div>
 
-            </div>
 <!-- repo stats end -->
           </div>
         </div>
-      </div>
+
 <!-- footer -->
       <footer>
         footer goes here
@@ -38,50 +36,57 @@
 
 <!-- profile-template -->
       <script id="profile-pane-template" type="text/x-handlebars-template">
-        <img src="#" alt="" />
           <div class="user-pane">
+            <div><img src="{{avatar_url}}" alt=""></div>
             <h1 class="user">
               <span class="name">{{name}}</span>
               <span class="user-name">{{login}}</span>
             </h1>
+            <a href="{{subscriptions_url}}"><button id="follow">Follow</button></a>
             <div class="follow"></div>
             <div class="block">
               <a href="">block</a>
             </div>
-            <div class="user-email">
-              {{email}}
+            <div>
+              <span class="octicon octicon-location"></span>
+              <span id="location">{{location}}</span>
             </div>
-            <div class="user-join-date">
-              {{created_at}}
+            <div class="user-email">
+              <span class="octicon octicon-mail"></span>
+              <span>{{email}}</span>
+            </div>
+            <div id="user-join-date">
+              <span class="octicon octicon-clock"></span>
+              <span>Joined on</span>
+              <span id="join-date">{{date}}</span>
             </div>
             <div class="user-orgs">
               <h2>organizations</h2>
-              <a href="">inserlink,icon on after</a>
+              <a href='{{subscription_url}}'>a</a>
             </div>
           </div>
         </script>
 
 <!-- repos-template -->
 <script id="repo-list-template" type="text/x-handlebars-template">
-  <div class="col-md-10 repo-pane">
+  <div class="row">
     <div class="col-md-6 repo-name">
-       <h3 class="repo-name">{{name}}</h3>
-      <p class="repostatus"></p>
+         <h3 class="repo-name">{{name}}</h3>
+        <p class="repostatus"></p>
+      </div>
+      <div class="col-md-3">
+        <span class="repoactivity">
+          {{repoactivity}}
+        </span>
+       </div>
+      <div class="col-md-2">
+        <span class="repotype">
+          {{language}}
+        </span>
+      </div>
+      <div class="col-md-1 repostars">
+        <a href="">{{stargazers_count}}</a>
     </div>
-    <div class="col-md-3">
-      <span class="repoactivity">
-        {{repoactivity}}
-      </span>
-     </div>
-    <div class="col-md-2">
-      <span class="repotype">
-        {{language}}
-      </span>
-    </div>
-    <div class="col-md-1 repostars">
-      <a href="">{{stargazers_count}}</a>
-    </div>
-  </div>
 </script>
 
 

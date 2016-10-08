@@ -12,13 +12,15 @@ if(githubtoken !== undefined){
 }
 
 $.ajax('https://api.github.com/users/matiasironyard').then(getProfile);
-$.ajax('https://api.github.com/users/matiasironyard/repos').then(getRepos);
+$.ajax('https://api.github.com/users/matiasironyard/repos?sort=pushed').then(getRepos);
+$.ajax('https://api.github.com/users/matiasironyard').then(getDate);
+$.ajax('https://api.github.com/users/matiasironyard/orgs').then(getSubscriptions);
 
 // Fetch & append profile data---------------------------------------------------------------------------------
 function getProfile(data){
 
   var myProfile = data;
-  console.log(data);
+  console.log(myProfile);
 
   var $profileContainer = $('#profilepane-container');
   var source = $('#profile-pane-template').html();
@@ -26,20 +28,40 @@ function getProfile(data){
   $profileContainer.append(profileTemplate(myProfile));
 }
 
+// Fetch & format date---------------------------------------------------------------------------------------------
+function getDate(data){
+  var dateFormat = require('dateformat');
+  var joinDate = data.created_at;
+  // console.log(joinDate);
+  dateFormat(joinDate, "mmm dd, yyyy");
+  console.log(dateFormat(joinDate, "mmm dd, yyyy"));
+  document.getElementById('join-date').textContent = dateFormat(joinDate, "mmm dd, yyyy");
+}
 
 // Fetch & append repo data-----------------------------------------------------------------------------------
 
-function getRepos(repos){
-
-  var myRepos = repos;
+function getRepos(data){
+  var myRepos = data;
   console.log(myRepos);
+  var $reposContainer = $('#repo-pane');
 
   var reposSource = $("#repo-list-template").html();
-  var reposTemplate = Handlebars.compile(reposSource);
-  console.log(reposTemplate);
+  var Template = Handlebars.compile(reposSource);
 
-  _.forEach(myRepos, function(repos){
-    var $reposDataHtml = $(reposTemplate(myRepos));
-      $('.repos-container').append($reposDataHtml);
-  });
+  _.each(myRepos,function(repo){
+  $reposContainer.append(Template(repo));
+});
+}
+
+// Fetch $ append subscriptions--------------------------------------------------------------------------------
+
+function getSubscriptions(data){
+
+  var mySubscriptions = data;
+  console.log(mySubscriptions);
+
+  // var $profileContainer = $('#profilepane-container');
+  // var source = $('#profile-pane-template').html();
+  // var profileTemplate = Handlebars.compile(source);
+  // $profileContainer.append(profileTemplate(myProfile));
 }
