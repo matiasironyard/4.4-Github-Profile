@@ -40,7 +40,37 @@ img {
 
 header{
   background-color: #F5F5F5;
+  .header-row{
+    margin: 0 auto;
+    width: 986px;
+  }
+  .header-col{
+    display: inline-flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 57px;
+    .github-seach{
+      width: 360px;
+    }
+    .git-nav-el{
+      margin-right: 10px;
+    }
+    .git-nav-links{
+      margin-right: 20px;
+      padding-top: 7px;
+      font-weight: bold;
+    }
+    .git-nav-right-el{
+      position: relative;
+      left: 225px;
+      padding-top: 7px;
+    }
+    .git-nav-right-el{
+      padding-right: 5px;
+    }
+  }
 }
+
 
 .main{
   margin: 0 auto;
@@ -194,4 +224,27 @@ height: 65px;
   font-size: 16px;
   font-weight: bold;
   color: #4078C0;
+}
+.footer-container{
+  width: 980px;
+  margin: 0 auto;
+  .footer-left{
+    span{
+    padding-right: 20px;
+    padding-top: 5px;
+    float: left
+  }
+  }
+  .footer-right{
+    float: right;
+    span{
+      padding-left: 20px;
+      padding-top: 5px;
+      float: right;
+    }
+  }
+  .footer-github-icon{
+    color: #CCCCCC;
+
+  }
 }
