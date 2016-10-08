@@ -12,6 +12,27 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
   box-sizing: border-box;
 }
 
+.clearfix{
+  overflow: auto;
+}
+
 img {
   max-width: 100%;
+}
+.main{
+  border: 2px solid blue;
+}
+
+.profile-panel{
+  border: 2px solid red;
+  float: left;
+}
+
+.repos-pane-nav{
+  border: 2px solid yellow;
+  float: right;
+}
+.repos-widow{
+  border: 2px solid green;
+  float: right;
 }

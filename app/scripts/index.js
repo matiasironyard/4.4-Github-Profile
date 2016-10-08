@@ -18,7 +18,12 @@ $.ajax('https://api.github.com/users/matiasironyard/repos').then(getRepos);
 function getProfile(data){
 
   var myProfile = data;
-  console.log(myProfile);
+  console.log(data);
+
+  var $profileContainer = $('#profilepane-container');
+  var source = $('#profile-pane-template').html();
+  var profileTemplate = Handlebars.compile(source);
+  $profileContainer.append(profileTemplate(myProfile));
 }
 
 
@@ -26,12 +31,15 @@ function getProfile(data){
 
 function getRepos(repos){
 
-  var myRepos = repos[0];
-
+  var myRepos = repos;
   console.log(myRepos);
 
-  _.forEach(myRepos, function(individualRepos){
-    // console.log(myRepos);
+  var reposSource = $("#repo-list-template").html();
+  var reposTemplate = Handlebars.compile(reposSource);
+  console.log(reposTemplate);
 
+  _.forEach(myRepos, function(repos){
+    var $reposDataHtml = $(reposTemplate(myRepos));
+      $('.repos-container').append($reposDataHtml);
   });
 }

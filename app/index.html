@@ -7,78 +7,83 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-
     <header>github header</header>
       <div class="main">
         <div class="container-fluid">
           <div class="row clearfix">
-            <div class="col-md-3 profile-panel">
-
 <!-- Profile pane -->
-              <div class="profilepane-container">
-                <div id="profile-pane">
-                  <img src="" alt="" />
-                    <div class="user-pane">
-                      <h1 class="user">
-                        <span class="name">{{name}}</span>
-                        <span class="user-name">{{user-name}}</span>
-                      </h1>
-                      <div class="follow"></div>
-                      <div class="block">
-                        <a href="">block</a>
-                      </div>
-                      <div class="user-email">
-                        {{email}}
-                      </div>
-                      <div class="user-join-date">
-                        {{join-date}}
-                      </div>
-                      <div class="user-orgs">
-                        <h2>organizations</h2>
-                        <a href="">inserlink,icon on after</a>
-                      </div>
-                    </div>
-                  </div>
+            <div class="col-md-3 profile-panel">
+              <div id="profilepane-container">
+
               </div>
             </div>
-
-
+            <div class="col-md-9 clearfix repos-pane-nav">
+              repos nav here
+            </div>
 <!-- Repo stats -->
-            <div class="col-md-8 repos-widow">
-            <!-- stats-template-here -->
+            <div class="col-md-9 repos-pane">
+                <div class="repos-container">
+
+                </div>
+
             </div>
 <!-- repo stats end -->
           </div>
         </div>
       </div>
-
 <!-- footer -->
       <footer>
         footer goes here
       </footer>
 
-<!-- repo-stats-template -->
-      <div id="repo-list">
-        <div class="col-md-12 repo-pane">
-          <div class="col-md-6 repo-name">
-             <h3 class="repo-name">{{reponame}}</h3>
-            <p class="repostatus">{{repostatus}}</p>
+<!-- profile-template -->
+      <script id="profile-pane-template" type="text/x-handlebars-template">
+        <img src="#" alt="" />
+          <div class="user-pane">
+            <h1 class="user">
+              <span class="name">{{name}}</span>
+              <span class="user-name">{{login}}</span>
+            </h1>
+            <div class="follow"></div>
+            <div class="block">
+              <a href="">block</a>
+            </div>
+            <div class="user-email">
+              {{email}}
+            </div>
+            <div class="user-join-date">
+              {{created_at}}
+            </div>
+            <div class="user-orgs">
+              <h2>organizations</h2>
+              <a href="">inserlink,icon on after</a>
+            </div>
           </div>
-          <div class="col-md-3">
-            <span class="repoactivity">
-              {{repoactivity}}
-            </span>
-           </div>
-          <div class="col-md-2">
-            <span class="repotype">
-              {{repotype}}
-            </span>
-          </div>
-          <div class="col-md-1 repostars">
-            <a href="">{{repostars}}</a>
-          </div>
-        </div>
-      </div>
+        </script>
+
+<!-- repos-template -->
+<script id="repo-list-template" type="text/x-handlebars-template">
+  <div class="col-md-10 repo-pane">
+    <div class="col-md-6 repo-name">
+       <h3 class="repo-name">{{name}}</h3>
+      <p class="repostatus"></p>
+    </div>
+    <div class="col-md-3">
+      <span class="repoactivity">
+        {{repoactivity}}
+      </span>
+     </div>
+    <div class="col-md-2">
+      <span class="repotype">
+        {{language}}
+      </span>
+    </div>
+    <div class="col-md-1 repostars">
+      <a href="">{{stargazers_count}}</a>
+    </div>
+  </div>
+</script>
+
 
     <script src="js/bundle.js"></script>
   </body>
