@@ -16,23 +16,26 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 //   overflow: auto;
 // }
 
+body{
+font-family: Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.5;
+color: #333;
+}
+
 img {
   max-width: 100%;
 }
 
-a {
-    color: #C3BFC0;
-    text-decoration: none;
-}
-
-a:hover
-{
-     color:#000000;
-     text-decoration:none;
-     cursor:pointer;
-}
 .octicon-triangle-down{
   color: #000000;
+}
+.octicon-star{
+  color: #767676;
+}
+
+.octicon-primitive-dot{
+  padding-right: 2px;
 }
 
 header{
@@ -41,17 +44,98 @@ header{
 
 .main{
   margin: 0 auto;
+  margin-top: 25px;
   width: 983px;
 }
 
 .profile-panel{
   float: left;
+  .name{
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .user-name{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #666;
+  }
+
+  .follow-button{
+    background: linear-gradient(#FBFBFB, #FBFBFB);
+    height: 33px;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+  }
+  #follow{
+    margin-top: 5px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
 }
 
+.block-box{
+  height: 40px;
+  a{
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #767676;
+  }
+}
+.user-contact{
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  .contact{
+    padding-top: 10px;
+    font-size: 14px;
+    .octicon{
+      color: #999999;
+      margin-right: 5px;
+    }
+  }
+}
+
+.user-orgs{
+  h2{
+    font-size: 16px !important
+  }
+}
+
+.avatar-box{
+  border-radius: 10px;
+}
+
+
+
 .repos-pane-nav{
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #DDDDDD;
   height: 65px;
   color: grey;
+  .counter{
+    color: #666666;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+  a {
+      color: #C3BFC0;
+      text-decoration: none;
+  }
+
+  a:hover
+  {
+       color:#000000;
+       text-decoration:none;
+       cursor:pointer;
+  }
 }
 .repo-nav{
   position: relative;
@@ -65,19 +149,22 @@ header{
 }
 
 .repo-search{
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   .input-group{
     display: inline-flex;
     width: 700px;
     .type{
       position: relative;
       left: 35px;
+      font-size: 14px;
       color: #818199;
+
     }
     .all{
       text-transform: uppercase;
       color: #000000;
+      font-size: 14px;
       font-weight: bold;
       margin: 2px;
     }
@@ -92,8 +179,8 @@ header{
 }
 
 .repo-item-holder{
-  border: 3px solid red;
   padding-top: 18px;
+  border-top: 1px solid #DDDDDD;
 }
 .repo-row * {
 margin:0 auto;
@@ -101,6 +188,10 @@ height: 65px;
 
 }
 .repo-pane{
-
   float: right;
+}
+.repo-name{
+  font-size: 16px;
+  font-weight: bold;
+  color: #4078C0;
 }
