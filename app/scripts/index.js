@@ -12,6 +12,8 @@ if(githubtoken !== undefined){
 }
 
 $.ajax('https://api.github.com/users/matiasironyard').then(getProfile);
+$.ajax('https://api.github.com/users/matiasironyard').then(getRepoNav);
+$.ajax('https://api.github.com/users/matiasironyard').then(getRepoSearch);
 $.ajax('https://api.github.com/users/matiasironyard/repos?sort=pushed').then(getRepos);
 $.ajax('https://api.github.com/users/matiasironyard').then(getDate);
 
@@ -20,14 +22,32 @@ function getProfile(data){
 
   var myProfile = data;
   console.log(myProfile);
-  var myOrgs = data.orgs_url;
-  console.log(myOrgs);
 
   var $profileContainer = $('#profilepane-container');
   var source = $('#profile-pane-template').html();
   var profileTemplate = Handlebars.compile(source);
   $profileContainer.append(profileTemplate(myProfile));
 }
+
+function getRepoNav(data){
+  var myRepoNav = data;
+  console.log(myRepoNav);
+  var $repoNavContainer = $('#repos-pane-nav');
+  var repoNavSource = $('#repo-pane-nav-template').html();
+  var repoNavTemplate = Handlebars.compile(repoNavSource);
+  $repoNavContainer .append(repoNavTemplate(myRepoNav));
+}
+
+function getRepoSearch(data){
+  var myRepoSearch = data;
+  console.log(myRepoNav);
+  var $repoSearchContainer = $('#repo-search-pane');
+  var repoSearchSource = $('#repo-search-template').html();
+  var repoSearchTemplate = Handlebars.compile(repoSearchSource);
+  $repoSearchContainer.append(repoSearchTemplate(myRepoSearch));
+}
+
+
 
 // Fetch & format date---------------------------------------------------------------------------------------------
 function getDate(data){

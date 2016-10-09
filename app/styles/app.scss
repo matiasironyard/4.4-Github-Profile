@@ -80,19 +80,37 @@ header{
 
 .profile-panel{
   float: left;
-  .name{
-    font-size: 26px;
-    line-height: 30px;
-  }
-  .user-name{
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 24px;
-    color: #666;
+  .user{
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 32px;
+    line-height: 1;
+    .name{
+      display: block;
+      font-size: 26px;
+      line-height: 30px;
+    }
+    .user-name{
+      display: block;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 24px;
+      color: #666;
+    }
+    .bio{
+      display: block;
+      font-size: 14px;
+      color: #767676;
+      margin-bottom: 12px;
+    }
   }
 
+
   .follow-button{
+    display: block;
     background: linear-gradient(#FBFBFB, #FBFBFB);
     height: 33px;
     border: 1px solid #DDDDDD;
@@ -110,17 +128,19 @@ header{
 }
 
 .block-box{
+  display: block;
   height: 40px;
+  padding-bottom: 12px;
+  padding-top: 6px;
   a{
     display: inline-block;
-    padding-top: 10px;
     font-size: 12px;
     color: #767676;
   }
 }
 .user-contact{
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
   border-top: 1px solid #DDDDDD;
   border-bottom: 1px solid #DDDDDD;
   .contact{
@@ -149,11 +169,25 @@ header{
   border-bottom: 1px solid #DDDDDD;
   height: 65px;
   color: grey;
+  .repo-nav{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 22px;
+    padding-bottom: 25px;
+  }
+  .repo-nav:hover{
+    border-bottom: 3px solid #C9510C;
+  }
   .counter{
     color: #666666;
     background-color: #EEEEEE;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-left: 10px;
+    display: inline-block;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
   }
   a {
       color: #C3BFC0;
@@ -178,18 +212,19 @@ header{
   float: right;
 }
 
-.repo-search{
+.repo-search {
   padding-top: 10px;
   padding-bottom: 10px;
   .input-group{
-    display: inline-flex;
-    width: 700px;
+      display: inline-flex;
+    .form-control{
+      width: 342px;
+    }
     .type{
       position: relative;
       left: 35px;
       font-size: 14px;
       color: #818199;
-
     }
     .all{
       text-transform: uppercase;
@@ -199,14 +234,24 @@ header{
       margin: 2px;
     }
     .btn-default{
-      background: linear-gradient(#FBFBFB, #FBFBFB);
+      background-color: linear-gradient(#FBFBFB, #FBFBFB);
       margin-left: 10px;
     }
+    .new-rep-btn{
+      background: linear-gradient(#81D364,#64B548);
+      font-size: 14px;
+      color: #ffffff;
+    }
+    .octicon-repo{
+      padding-right: 5px;
+    }
+
     .form-control{
       border-radius: 3px;
     }
   }
 }
+
 
 .repo-item-holder{
   padding-top: 18px;
