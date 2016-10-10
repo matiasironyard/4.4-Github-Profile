@@ -13,8 +13,9 @@ if(githubtoken !== undefined){
 
 $.ajax('https://api.github.com/users/matiasironyard').then(getProfile);
 $.ajax('https://api.github.com/users/matiasironyard').then(getRepoNav);
-$.ajax('https://api.github.com/users/matiasironyard').then(getRepoSearch);
+// $.ajax('https://api.github.com/users/matiasironyard').then(getRepoSearch);
 $.ajax('https://api.github.com/users/matiasironyard/repos?sort=pushed').then(getRepos);
+// $.ajax('https://api.github.com/users/matiasironyard/orgs').then(getOrgImage);
 $.ajax('https://api.github.com/users/matiasironyard').then(getDate);
 
 // Fetch & append profile data---------------------------------------------------------------------------------
@@ -38,14 +39,14 @@ function getRepoNav(data){
   $repoNavContainer .append(repoNavTemplate(myRepoNav));
 }
 
-function getRepoSearch(data){
-  var myRepoSearch = data;
-  console.log(myRepoNav);
-  var $repoSearchContainer = $('#repo-search-pane');
-  var repoSearchSource = $('#repo-search-template').html();
-  var repoSearchTemplate = Handlebars.compile(repoSearchSource);
-  $repoSearchContainer.append(repoSearchTemplate(myRepoSearch));
-}
+// function getRepoSearch(data){
+//   var myRepoSearch = data;
+//   console.log(myRepoSearch);
+//   var $repoSearchContainer = $('#repo-search-pane');
+//   var repoSearchSource = $('#repo-search-template').html();
+//   var repoSearchTemplate = Handlebars.compile(repoSearchSource);
+//   $repoSearchContainer.append(repoSearchTemplate(myRepoSearch));
+// }
 
 
 
@@ -72,4 +73,14 @@ function getRepos(data){
   _.each(myRepos,function(repo){
   $reposContainer.append(Template(repo));
 });
+
 }
+
+// Fetch 0rg info---------------------------------------------------------------------------------------------------
+//
+// function getOrgImage(orgInfo){
+//   console.log(orgInfo);
+//   orgInfo.forEach(function(org){
+//     $('#orgs-container').append('<a href="#" class="organizations" style="background-image: url(' + org.avatar_url + ')"></a>');
+//   });
+// }

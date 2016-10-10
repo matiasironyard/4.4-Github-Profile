@@ -44,7 +44,7 @@ header{
     margin: 0 auto;
     width: 986px;
   }
-  .header-col{
+  .header-col-left{
     display: inline-flex;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -67,6 +67,37 @@ header{
     }
     .git-nav-right-el{
       padding-right: 5px;
+    }
+  }
+  .header-col-right{
+    display: inline-flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 57px;
+    a{
+        text-decoration: none;
+    }
+    .octicon-plus{
+      font-size: 18px;
+      text-decoration: none;
+      color: #000000;
+    }
+    .octicon-triangle-down{
+      padding-left: 5px;
+      padding-top: 5px;
+      font-size: 12px;
+    }
+    .git-nav-repos{
+      display: inline-flex;
+      margin-right: 20px;
+      padding-top: 7px;
+      font-weight: bold;
+    }
+    .git-nav-profile{
+      display: inline-flex;
+      margin-right: 20px;
+      padding-top: 7px;
+      font-weight: bold;
     }
   }
 }
@@ -100,15 +131,14 @@ header{
       line-height: 24px;
       color: #666;
     }
-    .bio{
-      display: block;
-      font-size: 14px;
-      color: #767676;
-      margin-bottom: 12px;
-    }
   }
-
-
+  .bio{
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #767676;
+    margin-bottom: 12px;
+  }
   .follow-button{
     display: block;
     background: linear-gradient(#FBFBFB, #FBFBFB);
@@ -163,8 +193,6 @@ header{
   border-radius: 10px;
 }
 
-
-
 .repos-pane-nav{
   border-bottom: 1px solid #DDDDDD;
   height: 65px;
@@ -194,8 +222,7 @@ header{
       text-decoration: none;
   }
 
-  a:hover
-  {
+  a:hover {
        color:#000000;
        text-decoration:none;
        cursor:pointer;
@@ -208,7 +235,6 @@ header{
 }
 
 .repos-pane-nav{
-
   float: right;
 }
 
@@ -218,7 +244,7 @@ header{
   .input-group{
       display: inline-flex;
     .form-control{
-      width: 342px;
+      width: 360px;
     }
     .type{
       position: relative;
