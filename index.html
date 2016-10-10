@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+  <meta content="https://avatars3.githubusercontent.com/u/21245208?v=3&amp;s=400" property="og:image">
+  <title>4 4 Github Profile</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" media="screen" title="no title">
+</head>
+
+<body>
+  <header>
+    <div class="row header-row">
+      <div class="col-md-10 header-col-left">
+        <span class="mega-octicon octicon-mark-github git-nav-el"></span>
+        <span class="github-search git-nav-el"><input type="text" class="form-control github-seach"></span>
+        <a href="" class="git-nav-links"><span class="pull-request">Pull request</span></a>
+        <a href="" class="git-nav-links"><span class="issue">Issues</span></a>
+        <a href="" class="git-nav-links"><span class="gist">Gist</span></a>
+      </div>
+      <div class="col-md-2 header-col-right">
+        <a href="" class="git-nav-repos"><span class="octicon octicon-plus"></span><span class="octicon octicon-triangle-down"></span></a>
+        <a href="" class="git-nav-profile"><img src="#" alt="avatar-icon"><span class="octicon octicon-triangle-down"></span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container-fluid">
+      <div class="row clearfix">
+        <!-- Profile pane -->
+        <div class="col-md-3 profile-panel">
+          <div id="profilepane-container">
+            <!-- profile template here -->
+          </div>
+        </div>
+        <!-- repo nav bar             -->
+        <div id="repos-pane-nav" class="col-md-9 clearfix repos-pane-nav">
+          <!-- repo-pan-nav-template -->
+        </div>
+        <!-- repo search bar  -->
+
+        <div class="col-md-9 repo-search" id="repo-search">
+          <div class="row">
+            <div class="input-group">
+              <form class="flex-table-item flex-table-item-primary" action="index.html" method="post">
+                <input type="search" class="form-control" name="repos-search" placeholder="Search respositories...">
+              </form>
+              <!-- <input type="text" class="form-control" action="index.html" method="post"> -->
+              <button type="submit" class="btn btn-default type">Type:<span class="all">all</span><span class="octicon octicon-triangle-down"></span></button>
+              <button type="submit" class="btn btn-default type">Language:<span class="all">all</span><span class="octicon octicon-triangle-down"></span></button>
+              <a href="https://github.com/new" method="get"><button type="submit" class="btn btn-default type new-rep-btn"><span class="octicon octicon-repo"></span><span class="new">New</span></button></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repo stats -->
+        <div class="col-md-9 repo-pane" id="repo-pane"></div>
+      </div>
+
+      <!-- repo stats end -->
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="row footer-container">
+      <div class="col-md-6 footer-left">
+        <div class="row">
+          <span>© 2016 GitHub, Inc.</span>
+          <a href=""><span>Terms</span></a>
+          <a href=""><span>Privacy</span></a>
+          <a href=""><span>Security</span></a>
+          <a href=""><span>Status</span></a>
+          <a href=""><span>Help</span></a>
+        </div>
+      </div>
+      <div class="col-md-1"><span class="mega-octicon octicon-mark-github"></span></div>
+      <div class="col-md-5  footer-right">
+        <div class="row">
+          <a href=""><span>Contact GitHub</span></a>
+          <a href=""><span>API</span></a>
+          <a href=""><span>Training</span></a>
+          <a href=""><span>Shop</span></a>
+          <a href=""><span>Blog</span></a>
+          <a href=""><span>About</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- profile-template -->
+  <script id="profile-pane-template" type="text/x-handlebars-template">
+    <div class="user-pane">
+      <div><img class="avatar-box" src="{{avatar_url}}" alt=""></div>
+      <h1 class="user">
+            <span class="name">{{name}}</span>
+            <span class="user-name">{{login}}</span>
+          </h1>
+      <span class="bio">{{bio}}</span>
+      <a href="{{subscriptions_url}}">
+        <div class="follow-button">
+          <div id="follow">Follow</div>
+        </div>
+      </a>
+      <div class="follow"></div>
+      <div class="block-box">
+        <a href="">Block or report user</a>
+      </div>
+      <div class="user-contact">
+        <div class="contact">
+          <span class="octicon octicon-location"></span>
+          <span id="location">{{location}}</span>
+        </div>
+        <div class="user-email contact">
+          <span class="octicon octicon-mail"></span>
+          <a href="mailto:{{email}}" action="index.html" method="get"><span>{{email}}</span></a>
+        </div>
+        <div class="contact" id="user-join-date">
+          <span class="octicon octicon-clock"></span>
+          <span>Joined on</span>
+          <span id="join-date">{{date}}</span>
+        </div>
+      </div>
+      <!--end user contact//-->
+      <div class="user-orgs">
+        <h2>Organizations</h2>
+        <a href='{{organizations_url}}'><img src="app/images/groupicon.png" alt=""></a>
+      </div>
+    </div>
+  </script>
+
+  <!-- repo-pane-nav-template -->
+  <script id="repo-pane-nav-template" type="text/x-handlebars-template">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+        <a href="" class="repo-nav"><span>Overview</span></a>
+        <a href="" class="repo-nav"><span>Repositories</span><span class="counter">{{public_repos}}</span></a>
+        <a href="" class="repo-nav"><span>Stars</span><span class="counter">{{following}}</span></a>
+        <a href="{{followers_url}}" class="repo-nav"><span>Followers</span><span class="counter">{{followers}}</span></a>
+        <a href="{{following_url}}" method="get" class="repo-nav"><span>Following</span><span class="counter">{{following}}</span></a>
+        </div>
+      </div>
+    </div>
+  </script>
+
+
+  <!-- repos-template -->
+  <script id="repo-list-template" type="text/x-handlebars-template">
+    <div class="row repo-item-holder">
+      <div class="row repo-row">
+        <div class="col-md-6 repo-name">
+          <a class="repo-name" href=""><h3 class="repo-name">{{name}}</h3></a>
+          <p class="repostatus"></p>
+        </div>
+        <div class="col-md-3">
+          <span class="repoactivity">
+          {{repoactivity}}
+        </span>
+        </div>
+        <div class="col-md-2">
+          <span class="octicon octicon-primitive-dot"></span>
+          <span class="repotype">
+          {{language}}
+        </span>
+        </div>
+        <div class="col-md-1 repostars">
+          <span class="octicon octicon-star"></span>
+          <a href="">{{stargazers_count}}</a>
+        </div>
+      </div>
+  </script>
+
+
+  <script src="js/bundle.js"></script>
+</body>
+
+</html>
