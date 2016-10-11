@@ -5817,6 +5817,8 @@ header {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    position: relative;
+    left: 68px;
     padding-top: 10px;
     padding-bottom: 10px;
     height: 57px; }
@@ -6051,4 +6053,5 @@ header {
       float: right; }
   .footer-container .footer-github-icon {
     color: #CCCCCC; }
+
 /*# sourceMappingURL=app.css.map */
