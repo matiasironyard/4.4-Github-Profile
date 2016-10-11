@@ -3,13 +3,13 @@ var _ = require('underscore');
 var Handlebars = require('handlebars');
 var githubtoken = undefined('./gitapikey.js').token;
 
-// if(githubtoken !== undefined){
-//   $.ajaxSetup({
-//     headers: {
-//       'Authorization': 'token ' + githubtoken
-//     }
-//   });
-// }
+if(githubtoken !== undefined){
+  $.ajaxSetup({
+    headers: {
+      'Authorization': 'token ' + githubtoken
+    }
+  });
+}
 
 $.ajax('https://api.github.com/users/matiasironyard').then(getProfile);
 $.ajax('https://api.github.com/users/matiasironyard').then(getRepoNav);
