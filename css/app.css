@@ -5764,7 +5764,7 @@ button.close {
   box-sizing: border-box; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #333; }
@@ -5795,12 +5795,18 @@ header {
     height: 57px; }
     header .header-col-left .github-seach {
       width: 360px; }
+    header .header-col-left a {
+      text-decoration: none;
+      color: #000000; }
+    header .header-col-left a:hover {
+      color: #4078C0; }
     header .header-col-left .git-nav-el {
       margin-right: 10px; }
     header .header-col-left .git-nav-links {
       margin-right: 20px;
       padding-top: 7px;
-      font-weight: bold; }
+      font-weight: bold;
+      text-decoration: none; }
     header .header-col-left .git-nav-right-el {
       position: relative;
       left: 225px;
@@ -5816,6 +5822,17 @@ header {
     height: 57px; }
     header .header-col-right a {
       text-decoration: none; }
+    header .header-col-right .profile-dropdown {
+      margin-top: 7px;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      vertical-align: middle; }
+    header .header-col-right #nav-avatar {
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+      border-radius: 3px; }
     header .header-col-right .octicon-plus {
       font-size: 18px;
       text-decoration: none;
@@ -5908,8 +5925,12 @@ header {
       color: #999999;
       margin-right: 5px; }
 
-.user-orgs h2 {
+#user-orgs-pane h2 {
   font-size: 16px !important; }
+#user-orgs-pane .orgs-avatar-img {
+  height: 35px;
+  width: 35px;
+  border-radius: 5px; }
 
 .avatar-box {
   border-radius: 10px; }
@@ -5923,8 +5944,8 @@ header {
     padding-right: 20px;
     padding-top: 22px;
     padding-bottom: 25px; }
-  .repos-pane-nav .repo-nav:hover {
-    border-bottom: 3px solid #C9510C; }
+  .repos-pane-nav a:hover {
+    border-bottom: 2px solid #C9510C; }
   .repos-pane-nav .counter {
     color: #666666;
     background-color: #EEEEEE;
@@ -6000,6 +6021,21 @@ header {
   font-weight: bold;
   color: #4078C0; }
 
+.HTML {
+  color: #E44B23; }
+
+.CSS {
+  color: #563D7C; }
+
+.JavaScript {
+  color: #F1E05A; }
+
+.Ruby {
+  color: #701516; }
+
+#language-dot {
+  font-size: 25px; }
+
 .footer-container {
   width: 980px;
   margin: 0 auto; }
@@ -6015,4 +6051,5 @@ header {
       float: right; }
   .footer-container .footer-github-icon {
     color: #CCCCCC; }
+
 /*# sourceMappingURL=app.css.map */
