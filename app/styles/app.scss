@@ -1,11 +1,7 @@
-
 // Bootstrap Variables
 $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
-
 // Import Bootstrap
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
-
-
 *,
 *::before,
 *::after {
@@ -15,85 +11,104 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 // .clearfix{
 //   overflow: auto;
 // }
-
-body{
-font-family: Helvetica, Arial, sans-serif;
-font-size: 14px;
-line-height: 1.5;
-color: #333;
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
 }
 
 img {
   max-width: 100%;
 }
 
-.octicon-triangle-down{
+.octicon-triangle-down {
   color: #000000;
 }
-.octicon-star{
+
+.octicon-star {
   color: #767676;
 }
 
-.octicon-primitive-dot{
+.octicon-primitive-dot {
   padding-right: 2px;
 }
 
-header{
+header {
   background-color: #F5F5F5;
-  .header-row{
+  .header-row {
     margin: 0 auto;
     width: 986px;
   }
-  .header-col-left{
+  .header-col-left {
     display: inline-flex;
     padding-top: 10px;
     padding-bottom: 10px;
     height: 57px;
-    .github-seach{
+    .github-seach {
       width: 360px;
     }
-    .git-nav-el{
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+    a:hover {
+      color: #4078C0;
+    }
+    .git-nav-el {
       margin-right: 10px;
     }
-    .git-nav-links{
+    .git-nav-links {
       margin-right: 20px;
       padding-top: 7px;
       font-weight: bold;
+      text-decoration: none;
     }
-    .git-nav-right-el{
+    .git-nav-right-el {
       position: relative;
       left: 225px;
       padding-top: 7px;
     }
-    .git-nav-right-el{
+    .git-nav-right-el {
       padding-right: 5px;
     }
   }
-  .header-col-right{
+  .header-col-right {
     display: inline-flex;
     padding-top: 10px;
     padding-bottom: 10px;
     height: 57px;
-    a{
-        text-decoration: none;
+    a {
+      text-decoration: none;
     }
-    .octicon-plus{
+    .profile-dropdown {
+      margin-top: 7px;
+      display: inline-flex;
+      vertical-align: middle
+    }
+    #nav-avatar {
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+      border-radius: 3px;
+    }
+    .octicon-plus {
       font-size: 18px;
       text-decoration: none;
       color: #000000;
     }
-    .octicon-triangle-down{
+    .octicon-triangle-down {
       padding-left: 5px;
       padding-top: 5px;
       font-size: 12px;
     }
-    .git-nav-repos{
+    .git-nav-repos {
       display: inline-flex;
       margin-right: 20px;
       padding-top: 7px;
       font-weight: bold;
     }
-    .git-nav-profile{
+    .git-nav-profile {
       display: inline-flex;
       margin-right: 20px;
       padding-top: 7px;
@@ -102,28 +117,27 @@ header{
   }
 }
 
-
-.main{
+.main {
   margin: 0 auto;
   margin-top: 25px;
   width: 983px;
 }
 
-.profile-panel{
+.profile-panel {
   float: left;
-  .user{
+  .user {
     padding-top: 12px !important;
     padding-bottom: 12px !important;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 32px;
     line-height: 1;
-    .name{
+    .name {
       display: block;
       font-size: 26px;
       line-height: 30px;
     }
-    .user-name{
+    .user-name {
       display: block;
       font-size: 20px;
       font-style: normal;
@@ -132,14 +146,14 @@ header{
       color: #666;
     }
   }
-  .bio{
+  .bio {
     display: block;
     font-size: 14px;
     line-height: 1.5;
     color: #767676;
     margin-bottom: 12px;
   }
-  .follow-button{
+  .follow-button {
     display: block;
     background: linear-gradient(#FBFBFB, #FBFBFB);
     height: 33px;
@@ -148,7 +162,7 @@ header{
     width: 100%;
     text-align: center;
   }
-  #follow{
+  #follow {
     margin-top: 5px;
     color: #333;
     font-size: 14px;
@@ -157,56 +171,62 @@ header{
   }
 }
 
-.block-box{
+.block-box {
   display: block;
   height: 40px;
   padding-bottom: 12px;
   padding-top: 6px;
-  a{
+  a {
     display: inline-block;
     font-size: 12px;
     color: #767676;
   }
 }
-.user-contact{
+
+.user-contact {
   padding-bottom: 12px !important;
   padding-top: 12px !important;
   border-top: 1px solid #DDDDDD;
   border-bottom: 1px solid #DDDDDD;
-  .contact{
+  .contact {
     padding-top: 10px;
     font-size: 14px;
-    .octicon{
+    .octicon {
       color: #999999;
       margin-right: 5px;
     }
   }
 }
 
-.user-orgs{
-  h2{
+#user-orgs-pane {
+  h2 {
     font-size: 16px !important
+  }
+  .orgs-avatar-img {
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
   }
 }
 
-.avatar-box{
+.avatar-box {
   border-radius: 10px;
 }
 
-.repos-pane-nav{
+.repos-pane-nav {
   border-bottom: 1px solid #DDDDDD;
   height: 65px;
   color: grey;
-  .repo-nav{
+  .repo-nav {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 22px;
     padding-bottom: 25px;
   }
-  .repo-nav:hover{
-    border-bottom: 3px solid #C9510C;
+  a:hover {
+    border-bottom: 2px solid #C9510C;
   }
-  .counter{
+  .counter {
     color: #666666;
     background-color: #EEEEEE;
     border-radius: 20px;
@@ -218,104 +238,124 @@ header{
     line-height: 1;
   }
   a {
-      color: #C3BFC0;
-      text-decoration: none;
+    color: #C3BFC0;
+    text-decoration: none;
   }
-
   a:hover {
-       color:#000000;
-       text-decoration:none;
-       cursor:pointer;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
   }
 }
-.repo-nav{
+
+.repo-nav {
   position: relative;
   top: 20px;
   padding-right: 60px;
 }
 
-.repos-pane-nav{
+.repos-pane-nav {
   float: right;
 }
 
 .repo-search {
   padding-top: 10px;
   padding-bottom: 10px;
-  .input-group{
-      display: inline-flex;
-    .form-control{
+  .input-group {
+    display: inline-flex;
+    .form-control {
       width: 360px;
     }
-    .type{
+    .type {
       position: relative;
       left: 35px;
       font-size: 14px;
       color: #818199;
     }
-    .all{
+    .all {
       text-transform: uppercase;
       color: #000000;
       font-size: 14px;
       font-weight: bold;
       margin: 2px;
     }
-    .btn-default{
+    .btn-default {
       background-color: linear-gradient(#FBFBFB, #FBFBFB);
       margin-left: 10px;
     }
-    .new-rep-btn{
-      background: linear-gradient(#81D364,#64B548);
+    .new-rep-btn {
+      background: linear-gradient(#81D364, #64B548);
       font-size: 14px;
       color: #ffffff;
     }
-    .octicon-repo{
+    .octicon-repo {
       padding-right: 5px;
     }
-
-    .form-control{
+    .form-control {
       border-radius: 3px;
     }
   }
 }
 
-
-.repo-item-holder{
+.repo-item-holder {
   padding-top: 18px;
   border-top: 1px solid #DDDDDD;
 }
-.repo-row * {
-margin:0 auto;
-height: 65px;
 
+.repo-row * {
+  margin: 0 auto;
+  height: 65px;
 }
-.repo-pane{
+
+.repo-pane {
   float: right;
 }
-.repo-name{
+
+.repo-name {
   font-size: 16px;
   font-weight: bold;
   color: #4078C0;
 }
-.footer-container{
+
+.HTML {
+  color: #E44B23;
+}
+
+.CSS {
+  color: #563D7C;
+}
+
+.JavaScript {
+  color: #F1E05A
+}
+
+.Ruby {
+  color: #701516;
+}
+
+#language-dot {
+  font-size: 25px;
+}
+
+.footer-container {
   width: 980px;
   margin: 0 auto;
-  .footer-left{
-    span{
-    padding-right: 20px;
-    padding-top: 5px;
-    float: left
+  .footer-left {
+    span {
+      padding-right: 20px;
+      padding-top: 5px;
+      float: left
+    }
   }
-  }
-  .footer-right{
+  .footer-right {
     float: right;
-    span{
+    span {
       padding-left: 20px;
       padding-top: 5px;
       float: right;
     }
   }
-  .footer-github-icon{
+  .footer-github-icon {
     color: #CCCCCC;
-
   }
 }

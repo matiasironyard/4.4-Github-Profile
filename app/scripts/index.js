@@ -1,21 +1,20 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var Handlebars = require('handlebars');
-var githubtoken = require('./gitapikey.js');
+var githubtoken = require('./gitapikey.js').token;
 
 if(githubtoken !== undefined){
   $.ajaxSetup({
     headers: {
-      'Authorization': 'token ' + githubtoken.token
+      'Authorization': 'token ' + githubtoken
     }
   });
 }
 
 $.ajax('https://api.github.com/users/matiasironyard').then(getProfile);
 $.ajax('https://api.github.com/users/matiasironyard').then(getRepoNav);
-// $.ajax('https://api.github.com/users/matiasironyard').then(getRepoSearch);
 $.ajax('https://api.github.com/users/matiasironyard/repos?sort=pushed').then(getRepos);
-// $.ajax('https://api.github.com/users/matiasironyard/orgs').then(getOrgImage);
+$.ajax('https://api.github.com/users/matiasironyard/orgs').then(getOrgImage);
 $.ajax('https://api.github.com/users/matiasironyard').then(getDate);
 
 // Fetch & append profile data---------------------------------------------------------------------------------
@@ -28,6 +27,7 @@ function getProfile(data){
   var source = $('#profile-pane-template').html();
   var profileTemplate = Handlebars.compile(source);
   $profileContainer.append(profileTemplate(myProfile));
+  $('#nav-avatar').css('background-image', 'url('+myProfile.avatar_url+')');
 }
 
 function getRepoNav(data){
@@ -73,14 +73,16 @@ function getRepos(data){
   _.each(myRepos,function(repo){
   $reposContainer.append(Template(repo));
 });
-
 }
 
 // Fetch 0rg info---------------------------------------------------------------------------------------------------
-//
-// function getOrgImage(orgInfo){
-//   console.log(orgInfo);
-//   orgInfo.forEach(function(org){
-//     $('#orgs-container').append('<a href="#" class="organizations" style="background-image: url(' + org.avatar_url + ')"></a>');
-//   });
-// }
+
+function getOrgImage(orgInfo){
+  var myOrgs = orgInfo;
+  console.log(myOrgs);
+  var $myOrgsContainer = $('#user-orgs-pane');
+  var myOrgsSource = $('#orgs-template').html();
+  console.log(myOrgsSource);
+  var orgsTemplate = Handlebars.compile(myOrgsSource);
+  $myOrgsContainer.append(orgsTemplate(myOrgs[0]));
+}
