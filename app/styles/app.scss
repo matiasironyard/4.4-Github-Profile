@@ -75,6 +75,8 @@ header {
   }
   .header-col-right {
     display: inline-flex;
+    position: relative;
+    left: 68px;
     padding-top: 10px;
     padding-bottom: 10px;
     height: 57px;
