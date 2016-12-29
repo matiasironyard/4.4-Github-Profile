@@ -11,6 +11,11 @@ By the end of this project I was able to breakdown a complex sequence into a ser
 
 [DEMO](https://matiasironyard.github.io/4.4-Github-Profile/)
 
+Languages, Frameworks & Libraries
+-------------
+
+> HTML, CSS, Javascript, & JQuery
+
 ----------
 
 > **Project Timeline**
