@@ -1,9 +1,15 @@
+
+
+
+
+
 GITHUB PROFILE REPLICA
 ===================
 
-
 The task of this project was to create a functioning replica of my github profile.
 By the end of this project I was able to breakdown a complex sequence into a series of steps, using jQuery AJAX, handling callbacks and asynchronous code, and writing to the DOM with JS.
+
+[DEMO](https://matiasironyard.github.io/4.4-Github-Profile/)
 
 ----------
 
@@ -42,3 +48,4 @@ Deliverables
 
 ![Github Profile Replica](https://lh5.googleusercontent.com/7edHQa4VSPKoQ7vOnxza5-ifiAhnFcSsBgR2cWc-9CH29WyM0DSGY3NVqtmn4eoVB8lsVGL5v5Je7TzYgNlLRraa3MKdPXm2W0Qmra9D2zGU68BIJhxpKsSo4XlePKhWXX4-JfGq)
  
+
